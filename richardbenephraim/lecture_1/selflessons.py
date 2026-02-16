@@ -47,7 +47,6 @@ def password_generator():
             continue
     
     password = ''.join(secrets.choice(all_characters)for _ in range(length))
-    print(f"Generated Password: {password} \nsave your password")
     return password
     
 
@@ -85,6 +84,7 @@ def user_signup():
             case 'p':
                 password = password_generator()
                 password
+                print(f"Generated Password: {password} \nsave your password")
                 break
             case _:
                 if len(password) < 8:
@@ -119,7 +119,7 @@ def user_signup():
         data = []
 #json file in python list now 
 
-    data.append({username:data_input}) # data modified 
+    data.append(data_input) # data modified 
 
 #save the file back
     with open("config.json", "w", encoding="utf-8") as file:
@@ -152,8 +152,30 @@ def user_main():
 
 # if user already has account, he can login here
 def user_login():
-    pass
+    print(f"\n{"*"*10} LOGIN HERE {"*"*10}\n")
 
+    with open("config.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    username = input ("enter username: \n").strip()
+    password = input("enter password: \n")
+
+    #check if password and username matches record in database(json file)
+
+    for check in data:
+        if username == check.get("username") and password == check.get("password"):
+            return "logic is working"
+        elif username == check.get("username") and password != check.get("password"):
+            return "check login details... try again"
+        elif username != check.get("username") and password == check.get("password"):
+            return "account invalid"
+        else:
+            return "Sign Up first"
+
+    
+    
+    ### code cant be reached because of return
+        
 
 if __name__ == "__main__":
     main()
