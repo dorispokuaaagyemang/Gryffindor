@@ -90,50 +90,89 @@
 # cat()
 
 #  without using a function, this is how our code would be like:
-temp1 = 77
-celsius1 = (temp1 - 32) * 5 / 9
-print(celsius1)
+# temp1 = 77
+# celsius1 = (temp1 - 32) * 5 / 9
+# print(celsius1)
 
-temp2 = 95
-celsius2 = (temp2 - 32) * 5 / 9
-print(celsius2)
+# temp2 = 95
+# celsius2 = (temp2 - 32) * 5 / 9
+# print(celsius2)
 
-temp3 = 50
-celsius3 = (temp3 - 32) * 5 / 9
-print(celsius3)
+# temp3 = 50
+# celsius3 = (temp3 - 32) * 5 / 9
+# print(celsius3)
 
-# with the help of a function:
-def fahrenheit_to_celsius(temperature):
-    return (temperature - 32) * 5 / 9
-print(fahrenheit_to_celsius(77))
-print(fahrenheit_to_celsius(95))
-print(fahrenheit_to_celsius(50))
+# # with the help of a function:
+# def fahrenheit_to_celsius(temperature):
+#     return (temperature - 32) * 5 / 9
+# print(fahrenheit_to_celsius(77))
+# print(fahrenheit_to_celsius(95))
+# print(fahrenheit_to_celsius(50))
 
-# a function that returns value:
-def get_greetings():
-    return "Hello, World"
-message = get_greetings()
-print(message)
-
-
-def my_name():
-    return "isaac".title()
-name = my_name()
-print(name)
-
-def greetings():
-    greet = f"Hello My dear, {my_name()}"
-    return greet
-message = greetings()
-print(message)
+# # a function that returns value:
+# def get_greetings():
+#     return "Hello, World"
+# message = get_greetings()
+# print(message)
 
 
+# def my_name():
+#     return "isaac".title()
+# name = my_name()
+# print(name)
 
-def my_function(fname):
-    print(fname + " Refsnes")
-my_function("Emil")
-my_function("Tobias")
+# # creating my own function with f - string:
+# def greetings():
+#     greet = f"Hello My dear, {my_name()}"
+#     return greet
+# message = greetings()
+# print(message)
+
+
+# # creating my own function with f - string in concatenation:
+# def my_function(fname):
+#     print(fname + " Refsnes")
+# my_function("Emil")
+# my_function("Tobias")
+
+
     
+# creating my own function using the main():
+def main():
+    mate = (input("Who is your favourite class mate?: "))
+
+    hello() 
+
+def hello(to = "world"):
+    print("hello,", to)
+
+main()
+
+
+# asking for users input and calling it using the main function:
+
+def main():
+    church = input("who is your choir leader? : ")
+    
+    greet()
+def greet(hi = "man"):
+    print("welcom", hi)
+
+main()
+
+# taking users input and return a value:
+def main():
+    num = int(input("What is x? : "))
+    print("The square of x is:" ,square(num))
+
+
+def square(n):
+    return n*n
+    
+main()
+
+
+
 
 
 
