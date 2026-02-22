@@ -10,6 +10,8 @@ TODO =>
 adding more fixed exchange rates to the program.
 
 '''
+
+
 def main():
     output =choice()
     print(output)
@@ -60,7 +62,7 @@ use if -else for checking the source And target choice
 
 def choice():
 
-    message = input (f"\n{"*"*10} CUURENT CONVERTER {"*"*10} \npress '1' to continue or 'n' to exit: \n").strip().lower()
+    message = input (f"\n{"*"*10} CUURENCY CONVERTER {"*"*10} \npress '1' to continue or 'n' to exit: \n").strip().lower()
     print()
 
     match message:
@@ -77,6 +79,8 @@ def choice():
                     return ghc_to_euro(amount)
                 elif Target == "4":
                     return ghc_to_gbp(amount)
+                else:
+                    return "invalid Target Currency choice"
             elif source == "2":
                 if Target == "1":
                     return usd_to_ghc(amount)
@@ -86,6 +90,8 @@ def choice():
                     return usd_to_euro(amount)
                 elif Target == "4":
                     return usd_to_gbp(amount)
+                else:
+                    return "invalid Target Currency choice"
             elif source == "3":
                 if Target == "1":
                     return euro_to_ghc(amount)
@@ -95,6 +101,8 @@ def choice():
                     return f"EUR{amount}"
                 elif Target == "4":
                     return euro_to_gbp(amount)
+                else:
+                    return "invalid Target Currency choice"
             elif source == "4":
                 if Target == "1":
                     return gbp_to_ghc(amount)
@@ -104,6 +112,8 @@ def choice():
                     return gbp_to_euro(amount)
                 elif Target == "4":
                     return f"GBP{amount}"
+                else:
+                    return "invalid Target Currency choice"
             else:
                 return "invalid input... Try Again"
 
