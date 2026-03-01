@@ -37,3 +37,24 @@ from sys import argv,exit
 # file = open("./text.txt","w")
 # file.write("Mohammed Misbau")
 # file.close()
+
+# fd = open("./mock.csv")
+
+# for line in fd.readlines():
+#     print(line)
+
+# fd.close()
+
+
+
+from PIL import Image,ImageChops
+
+img1 = Image.open("./motor1.jpg")
+img2 = Image.open("./motor2.jpg")
+
+diff = ImageChops.difference(img1,img2)
+diff.show()
+
+# from PIL import Image
+# img = Image.open(.jpg)
+# img.show()
